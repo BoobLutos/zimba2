@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: zimba2
+  namespace: zimba2
+spec:
+  selector:
+    app: zimba2
+  ports:
+    - port: 80
+      targetPort: 5000
