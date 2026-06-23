@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipe of the Week</title>
+  <style>
+    body {
+      font-family: -apple-system, Helvetica, Arial, sans-serif;
+      background: #fdf6ec;
+      color: #333;
+      max-width: 640px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    h1 { color: #b34700; }
+    h2 { margin-top: 0; }
+    .week { color: #888; font-size: 0.9em; margin-bottom: 20px; }
+    ul, ol { padding-left: 20px; }
+    li { margin-bottom: 6px; }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 24px 28px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+  </style>
+</head>
+<body>
+  <h1>Recipe of the Week</h1>
+  <div class="week">{{ recipe.week }}</div>
+  <div class="card">
+    <h2>{{ recipe.name }}</h2>
+    <p>{{ recipe.description }}</p>
+
+    <h3>Ingredients</h3>
+    <ul>
+      {% for item in recipe.ingredients %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+
+    <h3>Instructions</h3>
+    <ol>
+      {% for step in recipe.instructions %}
+      <li>{{ step }}</li>
+      {% endfor %}
+    </ol>
+  </div>
+</body>
+</html>
