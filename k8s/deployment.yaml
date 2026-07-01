@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: zimba2
-          image: docker.io/booblutos/zimba2:5e1100c10c365fc4e58ac17bc55bd734265ee7d3
+          image: docker.io/booblutos/zimba2:b0de214283b59afb1079782e5bbe1d091e91ff83
           ports:
             - containerPort: 5000
           readinessProbe:
