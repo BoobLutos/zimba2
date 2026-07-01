@@ -5,8 +5,19 @@ metadata:
   namespace: zimba2
   annotations:
     nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+
+    # cert-manager annotations
+    cert-manager.io/cluster-issuer: "letsencrypt-prod"
+    cert-manager.io/acme-challenge-type: http01
+
 spec:
   ingressClassName: nginx
+
+  tls:
+    - hosts:
+        - zimba2.sinza.org
+      secretName: zimba2-tls
+  
   rules:
     - host: zimba2.sinza.org
       http:
