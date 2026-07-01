@@ -4,14 +4,14 @@ metadata:
   name: zimba2
   namespace: argocd
   finalizers:
-    - resources-finalizer.argocd.argoproj.io
+    - resources-finalizer.argocd.argoproj.io      #cascade delete
 spec:
   project: default
 
   source:
     repoURL: https://github.com/BoobLutos/zimba2.git
     targetRevision: main
-    path: k8s
+    path: k8s             # Argocd watches the k8s folder
 
   destination:
     server: https://kubernetes.default.svc
@@ -21,8 +21,8 @@ spec:
 
   syncPolicy:
     automated:
-      prune: true
-      selfHeal: true
+      prune: true                      # delete resources removed from k8s/
+      selfHeal: true                   # re-sync if cluster drifts from git
     syncOptions:
       - CreateNamespace=true
     retry:
