@@ -1,19 +1,19 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sample-app
+  name: zimba2
   namespace: argocd
 spec:
   project: default
 
   source:
-    repoURL: https://github.com/example-org/sample-app.git
+    repoURL: https://github.com/BoobLutos/zimba2.git
     targetRevision: main
     path: manifests
 
   destination:
     server: https://kubernetes.default.svc
-    namespace: sample
+    namespace: zimba2
 
   syncPolicy:
     automated:
