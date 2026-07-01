@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/BoobLutos/zimba2.git
     targetRevision: main
-    path: manifests
+    path: k8s
 
   destination:
     server: https://kubernetes.default.svc
